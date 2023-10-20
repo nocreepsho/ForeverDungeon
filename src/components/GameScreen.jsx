@@ -165,18 +165,18 @@ const GameScreen = () => {
       setHistory([...history, { story: text, img: imgUrl, userInput: '' }]);
 
       setIsLoading(false);
-      
+
     } catch (error) {
       console.error('Error sending choice:', error);
     }
   };
-  
+
 
 
   return (<>
 
     <div className="game-screen">
-      
+
       {showContent && (
         <div className="content">
           <h1 className="title">Forever Dungeon</h1>
@@ -196,19 +196,24 @@ const GameScreen = () => {
       {!showContent && !isLoading && (
         <div className='story'>
 
-          <div className="img-container">
-            {currentStoryIndex > 0 && (
-              <button className="arrow left-arrow" onClick={handleLeftArrowClick}>
-                &#8592;
-              </button>
-            )}
-            <img src={history[currentStoryIndex].img} alt="dungeon" className="dungeon-image" />
-
-            {currentStoryIndex < history.length - 1 && (
-              <button className="arrow right-arrow" onClick={handleRightArrowClick}>
-                &#8594;
-              </button>
-            )}
+          <div className="img-and-arrows">
+            <div className="left-arrow-container">
+              {currentStoryIndex > 0 && (
+                <button className="arrow left-arrow" onClick={handleLeftArrowClick}>
+                  &#8592;
+                </button>
+              )}
+            </div>
+            <div className="image-container">
+              <img src={history[currentStoryIndex].img} alt="dungeon" className="dungeon-image" />
+            </div>
+            <div className="right-arrow-container">
+              {currentStoryIndex < history.length - 1 && (
+                <button className="arrow right-arrow" onClick={handleRightArrowClick}>
+                  &#8594;
+                </button>
+              )}
+            </div>
           </div>
           <p className="story-text">{history[currentStoryIndex].story}</p>
 

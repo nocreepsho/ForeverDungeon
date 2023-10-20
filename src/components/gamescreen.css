@@ -52,6 +52,8 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
+    align-items: center;
+    justify-self: center;
 }
 
 
@@ -69,7 +71,8 @@
 
 .story-text {
     text-align: center;
-    white-space: pre-line;
+    width: 80%;
+    /* white-space: pre-line; */
 }
 
 .user-input {
@@ -77,6 +80,8 @@
     gap: 10px;
     margin-top: 16px;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .input-field {
@@ -115,14 +120,24 @@
     cursor: not-allowed;
 }
 
-.img-container {
-    position: relative;
-  }
+.img-and-arrows {
+    /* position: relative; */
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.left-arrow-container, .right-arrow-container, .image-container{
+    flex:1;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    
+}
+
   
-.arrow {
-    position: absolute;
-    top: 50%; /* Vertically center the arrows */
-    transform: translateY(-50%); /* Vertically center the arrows */
+.arrow { 
     background-color: #ffffff00;
     font-size: larger;
     transition: all 0.2s ease;
@@ -132,7 +147,7 @@
 .arrow:hover {
     color: #fa9b3d;
     background-color: #ffffff00;
-    transform: translateY(-50%) scale(1.5);
+    transform: scale(1.1);
 }
   
 .left-arrow {
