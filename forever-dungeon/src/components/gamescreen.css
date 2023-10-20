@@ -1,0 +1,240 @@
+
+.game-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    animation: scaleIn 0.7s ease forwards;
+
+}
+
+.title {
+    font-size: 220px;
+    margin: 0;
+
+}
+
+.subtitle {
+    margin-top: 16px;
+    color: #fa9b3d;
+}
+
+.begin-button {
+    margin-top: 18px;
+    background-color: #272727;
+    height: 48px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    /* Add box-shadow to the transition */
+}
+
+.begin-button:hover {
+    background-color: #fa9b3d;
+    box-shadow: 0 0 20px rgba(255, 177, 100, 0.7);
+}
+
+.message-button {
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #272727;
+}
+
+.message-button:hover {
+    background-color: #fa9b3d;
+    box-shadow: 0 0 20px rgba(255, 177, 100, 0.7);
+}
+
+.story {
+    font-size: 20px;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* animation: centerExpansionEnter 1s ease forwards; */
+}
+
+.dungeon-image {
+    width: 512px;
+    height: 512px;
+}
+
+.story-text {
+    text-align: center;
+    white-space: pre-line;
+}
+
+.user-input {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+    justify-content: center;
+}
+
+.input-field {
+    background-color: #272727;
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    color: #fa9b3d;
+    font-size: 16px;
+    width: 100%;
+    max-width: 400px;
+    transition: border 0.3s ease;
+
+}
+
+.input-field:focus {
+    outline: none;
+    border: 2px solid #fa9b3d;
+}
+
+.send-button {
+    background-color: #fa9b3d;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.send-button::not([disabled]):hover {
+    background-color: #fa9b3d;
+    box-shadow: 0 0 20px rgba(255, 177, 100, 0.7);
+
+}
+
+.send-button:disabled {
+    background-color: #272727;
+    cursor: not-allowed;
+}
+
+.img-container {
+    position: relative;
+  }
+  
+.arrow {
+    position: absolute;
+    top: 50%; /* Vertically center the arrows */
+    transform: translateY(-50%); /* Vertically center the arrows */
+    background-color: #ffffff00;
+    font-size: larger;
+    transition: all 0.2s ease;
+
+}
+
+.arrow:hover {
+    color: #fa9b3d;
+    background-color: #ffffff00;
+    transform: translateY(-50%) scale(1.5);
+}
+  
+.left-arrow {
+    left: 10px; 
+}
+  
+.right-arrow {
+    right: 10px; 
+}
+
+@keyframes scaleIn {
+    0% {
+        /* transform: scale(0); */
+        opacity: 0;
+      }
+      100% {
+        /* transform: scale(1); */
+        opacity: 1;
+      }
+}
+
+@keyframes centerExpansionEnter {
+    0% {
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+  }
+
+  
+  
+
+/* MEDIA QUERIES */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .title {
+        font-size: 70px;
+    }
+    .subtitle {
+        font-size: 16px;
+    }
+    .story {
+        font-size: 16px;
+    }
+    .dungeon-image {
+        width: 256px;
+        height: 256px;
+    }
+    .user-input{
+        flex-direction: column;
+        gap: 8px;
+        padding: 16px;
+        margin-top: -24px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .title {
+        font-size: 120px;
+    }
+    .subtitle {
+        font-size: 20px;
+    }
+    .story {
+        font-size: 18px;
+    }
+    .dungeon-image {
+        width: 384px;
+        height: 384px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .content{
+        width: 80%;
+    }
+    .title {
+        font-size: 160px;
+    }
+    .subtitle {
+        font-size: 24px;
+    }
+    .story {
+        font-size: 20px;
+    }
+    .dungeon-image {
+        width: 512px;
+        height: 512px;
+    }
+}
+
+
+
+
+
+
+  
