@@ -28,7 +28,6 @@
     height: 48px;
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    /* Add box-shadow to the transition */
 }
 
 .begin-button:hover {
@@ -61,7 +60,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* animation: centerExpansionEnter 1s ease forwards; */
 }
 
 .dungeon-image {

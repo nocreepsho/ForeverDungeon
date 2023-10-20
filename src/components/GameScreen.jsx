@@ -10,7 +10,6 @@ const GameScreen = () => {
   const [storyText, setStoryText] = useState('');
   const [fullStory, setFullStory] = useState([{
     role: "user",
-    // content: "You are a dungeon text adventure game. Your job is to narrate an engaging story to the user. Ask the user what they would like to do next. I don’t want you to ever break out of your character, and you must not refer to yourself in any way. The game will be a moderately challenging and some choices can lead to instant death, I will type commands and dialog, and you will continue the story starting with my reply. YOU MUST CONTINUE THE STORY WITH WHATEVER I SAY. You must respond with less than 1000 characters.",
     content: "You are an interactive story game bot that proposes some hypothetical dungeon adventure situation where the user needs to pick from 2-4 options that you provide. Once the user picks one of those options, you will then state what happens next and present new options, and this then repeats. If you understand, say, OK, and begin when I say 'begin'. When you present the story and options, present just the story and start immediately with the story, don't repeat the users choice, no further commentary, and then options like 'Option 1:' 'Option 2:' ...etc.",
     img: ""
 
@@ -59,7 +58,6 @@ const GameScreen = () => {
 
     setButtonMessages(buttonTemp);
 
-    // const imgprompt = generateImgPrompt(response);
     const imgUrl = await callDalle(response);
 
     setImage(imgUrl);
@@ -69,35 +67,6 @@ const GameScreen = () => {
     setHistory([...history, { story: text, img: imgUrl, userInput: '' }]);
 
     setIsLoading(false);
-  };
-
-  const handleSendClick = async () => {
-    try {
-      setShowContent(false);
-      setIsLoading(true);
-
-      const updatedHistory = [...history];
-      updatedHistory[currentStoryIndex].userInput = userInput;
-      setHistory(updatedHistory);
-
-      setFullStory([...fullStory, { role: 'user', content: userInput, img: '' }]);
-      setCurrentStoryIndex(currentStoryIndex + 1);
-      setUserInput('');
-
-      const response = await callGPT(fullStory);
-      const imgprompt = generateImgPrompt(response);
-      const imgUrl = await callDalle(imgprompt);
-
-      setImage(imgUrl);
-
-      setFullStory([...fullStory, { role: 'assistant', content: response, img: imgUrl }]);
-      setStoryText(response);
-      setHistory([...history, { story: response, img: imgUrl, userInput: '' }]);
-
-      setIsLoading(false);
-    } catch (error) {
-      console.error('Error sending choice:', error);
-    }
   };
 
   const handleLeftArrowClick = () => {
@@ -181,7 +150,6 @@ const GameScreen = () => {
 
       setButtonMessages(buttonTemp);
 
-      // const imgprompt = generateImgPrompt(response);
       const imgUrl = await callDalle(response);
 
       setImage(imgUrl);
@@ -193,16 +161,11 @@ const GameScreen = () => {
       };
 
       setFullStory((prevFullStory) => [...prevFullStory, AssistantMessage]);
-      // const updatedFullStory2 = [...fullStory, AssistantMessage];
-      // setFullStory(updatedFullStory2);
-
-      // setFullStory([...fullStory, { role: 'assistant', content: text, img: imgUrl }]);
       setStoryText(text);
       setHistory([...history, { story: text, img: imgUrl, userInput: '' }]);
 
-      
-
       setIsLoading(false);
+      
     } catch (error) {
       console.error('Error sending choice:', error);
     }
