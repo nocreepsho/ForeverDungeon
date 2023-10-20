@@ -1,13 +1,13 @@
 # Forever Dungeon: An Infinite Text Adventure 🧙
 
 ### Description
-Forever Dungeon is a fun project I created to expose myself to the OPENAI APIs. IT uses the `gpt3.5-turbo` model to generate the story and provides several options to the user. The story continues infinitely based on the users choices.
+Forever Dungeon is a fun project I created to expose myself to the OPENAI APIs. It uses the `gpt3.5-turbo` model to generate the story and provides several options to the user. The story continues infinitely based on the users choices.
 For a better experience, the text is also passed to the DALL-E API to generate a relevant image.
 
 I used `React` + `Vite` to setup the user interface. `Axios` is used to handle the API calls.
 
 ### *⚠️ WARNING! ⚠️*
-*The project is setup to use environment variables directly with the client-side code. While this is fine for demonstration purposes, never replicate this in actual production. You would want to setup a server side (ex. NodeJS), then store and handle the API keys and calls securely.*
+*The project is setup to use environment variables directly with the client-side code. While this is fine for demonstration purposes, never replicate this in actual production. You would want to setup a server-side (e.g. NodeJS), then store and handle the API keys and calls securely.*
 
 ### Installation
 - Clone the repo and install dependencies:
