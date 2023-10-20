@@ -10,22 +10,23 @@ I used `React` + `Vite` to setup the user interface. `Axios` is used to handle t
 *The project is setup to use environment variables directly with the client-side code. While this is fine for demonstration purposes, never replicate this in actual production. You would want to setup a server side (ex. NodeJS), then store and handle the API keys and calls securely.*
 
 ### Installation
-clone the repo and install dependencies:
+- Clone the repo and install dependencies:
 
-```
-npm install
-```
-place your OPENAI API Key a `.env` file in the project root folder. Vite requires you to add the prefix 'VITE_' to the name.
+  ```
+  npm install
+  ```
 
-```
-VITE_OPENAI_API_KEY = `Your secret key`
-```
+- Place your OPENAI API Key a `.env` file in the project root folder. Vite requires you to add the prefix 'VITE_' to the name.
 
-run the project:
+  ```
+  VITE_OPENAI_API_KEY = `Your secret key`
+  ```
 
-```
-npm run dev
-```
+- Run the project:
+
+  ```
+  npm run dev
+  ```
 
 ### Challenges Faced
 - **Consistent output:** The biggest challenge is getting consistent outputs all the time. I spent some time on the initial prompt to get it to give me a consistent output of the story text and choices, but it doesn't adhere to the format 100% of the time. That is a flaw I haven't been able to find a solution for. Here's the initial prompt that I used: 
